@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  labels:
+    app: belong-app
+    type: frontend
+spec:
+  template:
+    metadata:
+      name: belong-pod
+      labels:
+        app: belong-app
+        type: frontend
+    spec:
+      containers:
+      - name: httpd-container
+        image: belong-app:latest
+  replicas: 3
+  selector:
+    matchLabels:
+      app: belong-app
