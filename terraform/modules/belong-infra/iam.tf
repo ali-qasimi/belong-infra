@@ -1,18 +1,3 @@
-# EKS Cluster IAM Role
-
-# data "aws_iam_policy_document" "eks_assume_role" {
-#   statement {
-#     effect = "Allow"
-
-#     principals {
-#       type = "Service"
-#       identifiers = [ "eks.amazonaws.com" ]
-#     }
-
-#     actions = [ "sts.AssumeRole" ]
-#   }
-# }
-
 resource "aws_iam_role" "eks_iam_role" {
   name                = var.eks_iam_role_name
   assume_role_policy  = jsonencode({
@@ -45,22 +30,6 @@ resource "aws_iam_role_policy_attachment" "AmazonEKSVPCResourceController" {
   role        = aws_iam_role.eks_iam_role.name
 }
 
-
-
-#EKS Worker Nodes IAM Role:
-
-# data "aws_iam_policy_document" "eks_worker_nodes_assume_role" {
-#   statement {
-#     effect = "Allow"
-
-#     principals {
-#       type = "Service"
-#       identifiers = [ "ec2.amazonaws.com" ]
-#     }
-
-#     actions = [ "sts.AssumeRole" ]
-#   }
-# }
 
 resource "aws_iam_role" "worker_node_iam_role" {
   name                = var.eks_node_group_iam_role
