@@ -11,6 +11,6 @@ As the platform/systems team, we have been asked to deliver a standard secure in
 
 ### Solution Overview: <br>
 • Terraform has been used to provision the infrastructure including EKS cluster, EKS node group, IAM roles and policies, VPC, private subnets, public subnet along with Internet gateway and route table, security groups, ssh keys etc. Note that the provider configuration is set to accommodate for testing on Localstack. <br>
-• Kubernetes deployment and NodePort provisioning. <br>
+• Kubernetes deployment, NodePort and Ingress Controller ALB provisioning. <br>
 • Dockerfile to bake the application image along with its dependencies <br>
 • Shell script to provision the Terraform infrastructure, build the docker image and deploy the Kubernetes resources. <br>
