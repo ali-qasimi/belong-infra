@@ -16,6 +16,26 @@ spec:
       containers:
       - name: httpd-container
         image: belong-app:latest
+        ports:
+          - name: https
+            containerPort: 443
+          - name: http
+            containerPort: 80
+        resources:
+          requests:
+            memory: "256Mib"
+            cpu: 1
+          limits:
+            memory: "1Gi"
+            cpu: 2
+        livenessProbe:
+          httpGet:
+            path: /belong-test.html
+            port: 80
+        readinessProbe:
+          httpGet:
+            path: /belong-test.html
+            port: 80
   replicas: 3
   selector:
     matchLabels:
