@@ -14,3 +14,7 @@ As the platform/systems team, we have been asked to deliver a standard secure in
 • Kubernetes deployment, NodePort and Ingress Controller ALB provisioning. <br>
 • Dockerfile to bake the application image along with its dependencies <br>
 • Shell script to provision the Terraform infrastructure, build the docker image and deploy the Kubernetes resources. <br>
+
+### Setup: <br>
+• Requirements: Terraform v1.0.9, Localstack 0.12.19.1, kubectl v1.24.3, Docker v20.10.9, Bash terminal. <br>
+• To deploy the infrastructure, run `./deploy.sh`
